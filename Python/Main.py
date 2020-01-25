@@ -67,8 +67,7 @@ def run_parser():
     '''Prepare data'''
     args.file_dir = os.path.dirname(os.path.realpath('__file__'))
     args.res_dir = os.path.join(args.file_dir, 'results/{}'.format(args.data_name))
-
-return args
+    return args
 
 
 @memory.cache
@@ -102,6 +101,8 @@ data_params = {'home_path': home_path,
                'r_u_list_file': 'p_a_list_train.txt',
                'r_v_list_file': 'p_k_list_train.txt',
                'emb_pkl_file': 'nodevectors.pkl'}
+
+args = run_parser()
 
 test_ratio = args.test_ratio
 max_train_num = args.max_train_num 
